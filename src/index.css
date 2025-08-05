@@ -1,0 +1,33 @@
+
+.contactscomb{
+    margin-top: 10%;
+    
+}
+
+li{
+
+    border: grey 1px solid;
+    border-radius: 5px;
+    height: 300px;
+    margin-bottom: 30px;
+    list-style: none;
+    margin-top: 20px;
+      display: flex;
+    justify-content: center; 
+    align-items: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+    
+}
+
+h1{
+    /* display: inline-block; /* Or any other inline-level display 
+    vertical-align: top; */
+
+}
+
+.ainputs{
+     display: flex;
+        gap: 20px;
+
+}
