@@ -1,6 +1,6 @@
 
-.contactscomb{
-    margin-top: 10%;
+body{
+    height: 100vh;
     
 }
 
@@ -11,23 +11,35 @@ li{
     height: 300px;
     margin-bottom: 30px;
     list-style: none;
-    margin-top: 20px;
-      display: flex;
+
+    display: flex;
     justify-content: center; 
     align-items: center;
     font-family: 'Courier New', Courier, monospace;
     font-size: 20px;
-    
+    margin-top: 20%;
 }
 
 h1{
-    /* display: inline-block; /* Or any other inline-level display 
-    vertical-align: top; */
+
+         font-weight: 900; 
 
 }
 
-.ainputs{
-     display: flex;
-        gap: 20px;
 
+
+.ccard{
+    width: 900px;
+    height: 400px;
+
+      display: flex;
+      justify-content: center; /* Centers horizontally */
+      align-items: center; 
+
+      background-color:antiquewhite;
+      color: rgb(6, 66, 6);
+}
+
+.h1{
+    color: rgb(152, 0, 0);
 }

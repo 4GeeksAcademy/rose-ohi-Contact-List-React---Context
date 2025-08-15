@@ -24,8 +24,11 @@
 
 
         <form onSubmit={handleSubmit}>
-<div className="ainputs container">
+<div className="ainputs container text-center">
+
+<h1>ADD A New Contact</h1>
             <input
+            className="me-3"
             type="text"
             placeholder="Name"
             value={name}
@@ -33,6 +36,7 @@
           /> 
           
           <input
+            className="me-3"
             type="text"
             placeholder="Address"
             value={address}
@@ -40,6 +44,7 @@
           />
         
           <input
+            className="me-3"
             type="text"
             placeholder="Phone Number"
             value={phone}
@@ -47,6 +52,7 @@
           /> 
           
           <input
+            className="me-3 mt-3"
             type="text"
             placeholder="Email"
             value={email}
@@ -54,7 +60,7 @@
           />
 </div>
           <br />
-          <button class="mt-2" type="submit">Add New Contact</button>
+          <button className="btn btn-warning mt-2" type="submit">Add New Contact</button>
 
           {/* Add onClick calls POST/updateUser method/f(x) */}
         </form>

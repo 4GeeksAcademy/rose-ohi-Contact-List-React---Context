@@ -69,11 +69,12 @@ const EditContactsPg = () => {
   }
 
   return (
-    <div className="container ">
-      <h1>Edit Contact #{contactId}</h1>
+    <div className="container text-center ">
+      <h1>Edit Contact # {contactId}</h1>
 
       <form onSubmit={handleSubmit}>
         <input
+          className="me-3"
           type="text"
           name="name"
           placeholder="Name"
@@ -82,6 +83,7 @@ const EditContactsPg = () => {
         />
 
         <input
+          className="me-3"
           type="text"
           name="address"
           placeholder="Address"
@@ -90,6 +92,7 @@ const EditContactsPg = () => {
         />
 
         <input
+          className="me-3"
           type="text"
           name="phone"
           placeholder="Phone"
@@ -98,6 +101,7 @@ const EditContactsPg = () => {
         />
 
         <input
+          className="me-3 mt-3"
           type="email"
           name="email"
           placeholder="Email"
@@ -107,7 +111,7 @@ const EditContactsPg = () => {
 
         {/*  Update button for UI changes  */}
          {/* <Link to="/">  */}
-             <button className="mt-2" type="submit">Update Contact</button>
+             <button className="btn btn-warning mt-3" type="submit">Update Contact</button>
          {/* </Link>  */}
       </form>
 
