@@ -1,28 +1,44 @@
-// Import necessary components from react-router-dom and other parts of the application.
+//MAIN contacts Adding contacts Page
 import Adds from '../components/Adding';
-import ContactsCombine from "./Layout";
-// Import necessary components from react-router-dom and other parts of the application.
+// import ContactsCombine from "./Layout";
 import { Link } from "react-router-dom";
 import useGlobalReducer from "../hooks/useGlobalReducer";  // Custom hook for accessing the global state.
+
+import useActions from '../hooks/useActions';
 
 export const Demo = () => {
   // Access the global state and dispatch function using the useGlobalReducer hook.
   const { store, dispatch } = useGlobalReducer();
 
-  /// Define the addContact function (also manages errors)
-  const addContact = (contactData) => {
+  const {getContacts} = useActions(); //defining the getContacts function that was imported from useActions object(full of functions) & .js file. 
+  //this is the same as useActions.getContacts()
+
+  /// Defines addContact function (also manages errors)
+  const addContact = async (contactData) => {
     try {
-      console.log('Adding contact:', contactData); // Debug log
+      console.log('Adding contact:', contactData); 
       
-      // Dispatch an action to add the contact to your global state
-      dispatch({
-        type: 'ADD_CONTACT',
-        payload: contactData
+      // Make POST request to API
+      const response = await fetch('https://playground.4geeks.com/contact/agendas/rose-ohi/contacts', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(contactData)
       });
-      
-      console.log('Contact added successfully'); // Debug log
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      const result = await response.json();
+      console.log('Contact added to successfully(API)', result); //ontact added to API successfully
+
+      getContacts()  //call that renders newest list
+
+      console.log('Contact added successfully'); //Contact added to global state successfully
     } catch (error) {
-      console.error('Error could not add contact:', error);
+      alert('ERROR: could not add contact. Please try again.');
     }
   };
 

@@ -1,9 +1,8 @@
-// Import necessary hooks and functions from React.
 import { useContext, useReducer, createContext } from "react";
-import storeReducer, { initialStore } from "../store"  // Import the reducer and the initial state.
+import storeReducer, { initialStore } from "../store"  // Import the reducer and the initial state
 
 // Create a context to hold the global state of the application
-// We will call this global state the "store" to avoid confusion while using local states
+//This global state is the "store" (not same as the local states")
 const StoreContext = createContext()
 
 // Define a provider component that encapsulates the store and warps it in a context provider to 

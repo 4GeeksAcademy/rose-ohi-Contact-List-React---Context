@@ -5,17 +5,17 @@
       const [name, setName] = useState('');
       const [phone, setPhone] = useState('');
       const [email, setEmail] = useState('');
-      const [locate, setLocate] = useState('');
+      const [address, setAddress] = useState('');
 
 
       const handleSubmit = (e) => {
         e.preventDefault();
-        if (name && phone && email && locate) {
-          onAddContact({ name, phone, email, locate });
+        if (name && phone && email && address) {
+          onAddContact({ name, phone, email, address });
           setName('');
           setPhone('');
           setEmail('');
-          setLocate('');
+          setAddress('');
         }
       };
 
@@ -35,8 +35,8 @@
           <input
             type="text"
             placeholder="Address"
-            value={locate}
-            onChange={(e) => setLocate(e.target.value)}
+            value={address}
+            onChange={(e) => setAddress(e.target.value)}
           />
         
           <input
@@ -55,6 +55,8 @@
 </div>
           <br />
           <button class="mt-2" type="submit">Add New Contact</button>
+
+          {/* Add onClick calls POST/updateUser method/f(x) */}
         </form>
       );
     }

@@ -2,7 +2,7 @@ export const initialStore = () => {
   return {
     message: null,
     contacts: [], // contacts array
-    todos: [
+    todos: [  //can i 
       {
         id: 1,
         title: "Make the bed",
@@ -27,10 +27,10 @@ export default function storeReducer(store, action = {}) {
         todos: store.todos.map((todo) => (todo.id === id ? { ...todo, background: color } : todo))
       };
 
-    case 'ADD_CONTACT':
+    case 'SET_CONTACTS':
       return {
-        ...store, // Changed from 'state' to 'store'
-        contacts: [...(store.contacts || []), action.payload] // Changed from 'state' to 'store'
+        ...store, 
+        contacts: action.payload //calls getContacts()
       };
     
     default:
